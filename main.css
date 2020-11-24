@@ -1,0 +1,40 @@
+body {
+    background-color: #B8E7D3;
+    padding: 0;
+    margin: 0;
+}
+header{
+    margin: 0;
+    padding: 0;
+    background-color: #56ae88;
+    color: black;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    border-bottom: 0.25em solid rgba(0, 0, 0,0.5);
+}
+
+.content{
+    border: 1px solid black;
+    border-radius: 1em;
+    margin-top: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bottom: 1em;
+    padding: 0 0 0 1em;
+    text-align: center;
+}
+
+#gobutton{
+    cursor: pointer;
+}
+
+#gobutton:hover{
+    border: 0.15em solid rgba(0, 0, 0,0.5);
+}
+
+#gobutton:active{
+    background-color: black;
+    color: #56ae88;
+    border: 0.15em solid #B8E7D3;
+}
