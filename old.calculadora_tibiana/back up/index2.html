@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head> <title>Calculadora Tibiana</title>
+    <meta name="author" content="Edmilson Gonçalves - Haojrs">
+    <meta charset="utf-8">
+    <meta name="description" content="A WebApp used to calculate info about the game Tibia, Tibian Calculator." />
+    <meta name="keywords" content="habilidade, habilidades tibia, espada, clava, maça, machado, distância, físico, dano, corpo a corpo, skill, distance, physical, damage, calculator, melee, axe, sword, club, tibia, stats, statistics, tibia-stats, CipSoft, Tibian Calculator, Tibian calculator, Calculadora, dados tibia, calculos tibia" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,  user-scalable=0" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-title" content="Calc. Tibiana PWA">
+    <link rel="touch-icon" href="https://pbs.twimg.com/profile_images/1233627159/TibiaIcon_400x400.png" type=image/x-icon>
+    <link rel="shortcut icon" href="https://pbs.twimg.com/profile_images/1233627159/TibiaIcon_400x400.png" type="image/x-icon" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="tibianCalculatorStyleSheet.css">
+<script src="tibianCalculatorJavaScript.js"></script>
+
+
+</head>
+<body>
+<header>
+    <div id="container">
+        <h1 class="logo">Calculadora<span>Tibiana</span></h1>
+
+        <div class="hamburger" onclick="Mudarestado('theMenuHanburger'); Mudarestado('hamburgerX'); Mudarestado('hamburgerY');"></div>
+        <div id="hamburgerY" style="display: block;"></div>
+        <div id="hamburgerX" style="display: none;"></div>
+
+        <nav class="site-nav" id="theMenuHanburger" style="display: none;">
+        <ul>
+
+            <li><a href="index2.html"><i   class="fas fa-calculator"></i> Calculadora</a></li>
+
+            <li><a href="ENCONTRA-PLAYER.html"><i   class="fas fa-search"></i> Encontrar Personagem</a></li>
+
+            <li><a href="TOP_SKILL_PT.html"><img src="https://image.flaticon.com/icons/svg/87/87087.svg" style="width: 1.1em; height: 1.1em;"> Top Skills</a></li>
+
+            <li><a href="TOP_XP_PT.html"><i   class="fas fa-arrow-circle-up"></i> Top XP</a></li>
+
+            <li><p href=""><i class="fas fa-newspaper"></i> Ultima Notícia - em breve</p></li>
+            <li><a href="index_EN.html"><img src="https://image.flaticon.com/icons/svg/48/48632.svg" style="width: 1.1em; height: 1.1em;"> English</a></li>
+        </ul>
+
+        </nav>
+
+    </div>
+</header>
+<br><br><br><br>
+<section class="calculadora-principal input">
+    <div class="intern-section">
+
+    <p> Level do personagem: <input class = "text" id="level" type="number" placeholder="Level" style="margin: 5px;">
+
+    <label class="myButton" onclick="calcular(); calcularVelocidade();">Calcular</label>
+    </div>
+</section>
+
+<section class="calculadora-principal output">
+    <div class="intern-section">
+        <fieldset class="fieldSet">
+            <legend ><i>Divide Experiência com:</i></legend>
+
+            <p>Level mínimo: <label id="levelMin" for="levelMin" />0</p>
+
+            <p>Level máximo: <label id="levelMax" for="levelMax" />0</p>
+        </fieldset>
+            <br>
+        <p>Experiência total do personagem: <font color="darkgreen"><label id="xpTotal" for="xpTotal" /></font></p>
+        <p>Experiência para o próximo level: <font color="darkgreen"><label id="proximo" for="proximo" /></font></p>
+        <hr>
+
+        <p>Experiência perdida ao morrer sem bless: <font color="red"><label id="xpPerdidaSemBless" For="xpPerdidaSemBless"/></font></p>
+        <p>Experiência perdida ao morrer com as 5 blesses: <font color="red"><label id="xpPerdidaCincoBlesses" for="xpPerdidaCincoBlesses" /></font></p>
+        <p>Experiência perdida ao morrer com as 7 blesses: <font color="red"><label id="xpPerdidaSeteBlesses" for="xpPerdidaSeteBlesses" /></font></p>
+        <hr>
+    </div>
+</section>
+
+<section class="calculadora-principal pick-vocation">
+    <fieldset class="fieldSet">
+        <legend ><i>Escolha a  vocação:</i></legend>
+            <div id="divLabelVocacao">
+                <label class="labelVocacao" id="labelEliteKnight"><img width="35px" heigh="35px" src="https://www.tibiawiki.com.br/images/9/91/Outfit_Knight_Male_Addon_3.gif"><input  type="radio" class="radioVocacao" name="vocacao" id="eliteKnight"   onclick =" calcular(); calcularVelocidade(); calcularMagicLevel(); calcularMeleeSkill(); calcularShieldingSkill(); calcularDistanceSkill(); trocaCor();">Elite Knight</label>
+
+                <label class="labelVocacao" id="labelMago"><img width="35px" heigh="35px" src="https://www.tibiawiki.com.br/images/d/da/Outfit_Mage_Male_Addon_3.gif"><input  type="radio" class="radioVocacao"  name="vocacao" id="mago"   onclick ="calcular(); calcularVelocidade(); calcularMagicLevel(); calcularMeleeSkill(); calcularShieldingSkill(); calcularDistanceSkill(); trocaCor();">ED/MS</label>
+<br>
+                <label class="labelVocacao" id="labelRoyalPaladin"><img width="35px" heigh="35px" src="https://www.tibiawiki.com.br/images/9/9a/Outfit_Hunter_Male_Addon_3.gif"><input  type="radio" class="radioVocacao" name="vocacao" id="royalPaladin"   onclick ="calcular(); calcularVelocidade(); calcularMagicLevel(); calcularMeleeSkill(); calcularShieldingSkill(); calcularDistanceSkill(); trocaCor();">Royal&nbsp;Pladin</label>
+
+              <div style="display: inline-block;">
+                <label class="labelVocacaoSemVocacao" id="labelSemVocacao"><img width="35px" heigh="35px" src="https://www.tibiawiki.com.br/images/e/e4/Outfit_Citizen_Male.gif"><input  type="radio" class="radioVocacao"  name="vocacao" id="semVocacao"   onclick ="calcular(); calcularVelocidade(); calcularMagicLevel(); calcularMeleeSkill(); calcularShieldingSkill(); calcularDistanceSkill(); trocaCor();">Sem&nbsp;Vocação</label>
+    </div>
+</section>
+
+<section class="calculadora-principal hidden-menu-divs-labels">
+    <div class="intern-section">
+<br>
+  <label class="labelMenus" id="labelMenusAtributos"><input  type="radio" class="radioMenus" name="Menus" id="radioMenusAtributos" onchange ="Mudarestado('divAtributos'); recolherTodos('divVelocidade'); recolherTodos('divSkill'); recolherTodos('divExperiencia'); recolherTodos('divStamina'); trocaCor();">Atributos</label>
+
+  <label class="labelMenus" id="labelMenusVelocidade"><input  type="radio" class="radioMenus" name="Menus" id="radioMenusVelocidade" onchange ="recolherTodos('divAtributos'); Mudarestado('divVelocidade'); recolherTodos('divSkill'); recolherTodos('divExperiencia'); recolherTodos('divStamina'); trocaCor();">Velocidade</label>
+
+  <label class="labelMenus" id="labelMenusSkill"><input  type="radio" class="radioMenus" name="Menus" id="radioMenusSkill" onchange ="recolherTodos('divAtributos'); recolherTodos('divVelocidade'); Mudarestado('divSkill'); recolherTodos('divExperiencia'); recolherTodos('divStamina'); trocaCor();">Skill</label>
+
+  <label class="labelMenus" id="labelMenusExperiencia"><input  type="radio" class="radioMenus" name="Menus" id="radioMenusExperiencia" onchange ="recolherTodos('divAtributos'); recolherTodos('divVelocidade'); recolherTodos('divSkill'); Mudarestado('divExperiencia');  recolherTodos('divStamina'); trocaCor();">Experiência</label>
+
+  <label class="labelMenus" id="labelMenusStamina"><input  type="radio" class="radioMenus" name="Menus" id="radioMenusStamina" onchange ="recolherTodos('divAtributos'); recolherTodos('divVelocidade'); recolherTodos('divSkill'); recolherTodos('divExperiencia'); Mudarestado('divStamina'); trocaCor();">Stamina</label>
+<br><br>
+
+    </div>
+</section>
+
+<section class="calculadora-principal hidden-menu-divs">
+
+<div class="intern-section" id="divAtributos" style="display:none">
+          <p class="pAlteradoDois" >Cálculos de atributos básicos dos personagens:</p><hr>
+        <p>
+            <label id="vocacaoEscolhida" for="vocacaoEscolhida">Escolha a  vocação:</label></p>
+        <p>Hit Point: <label id="hitPoint" for="hitPoint" />0</p>
+
+        <p>Mana Point: <label id="manaPoint" for="manaPoint" />0</p>
+
+        <p>Velocidade: <label id="velocidade" for="velocidade" />0</p>
+
+        <p>Capacidade: <label id="capacidade" for="capacidade" />0</p>
+        <hr>
+</div>
+<!--///////////////////////////////////////////////////////////////////////-->
+<div class="intern-section" id="divVelocidade" style="display:none">
+  <p class="pAlteradoDois" >Cálculos de velocidade:</p><hr>
+        <p>Velocidade total: <label id="velocidadeUm"/>0</p>
+         <hr>
+          <p>Magias:</p>
+        <p><label id="labelNenhumaMagia" class="labelvelocidade"><input class="radioVelocidade" type = "radio" class = "radio"" name = "magiaVelocidade" id = "nenhumaMagia" value = "1" onchange="calcularVelocidade(); trocaCor();"/>Nenhuma</label>
+        <label id="labelUtaniHur" class="labelvelocidade"><input class="radioVelocidade" type = "radio" class = "radio" name ="magiaVelocidade" id = "utaniHur" value = "2" onchange="calcularVelocidade(); trocaCor();" />Utani&nbsp;Hur</label>
+
+        <label id="labelUtaniGranHur" class="labelvelocidade"><input class="radioVelocidade" type = "radio" class = "radio" name = "magiaVelocidade" id = "utaniGranHur" value = "3" onchange="calcularVelocidade(); trocaCor();" />Utani&nbsp;Gran&nbsp;Hur</label></p>
+
+        <p><label id="labelUtamoTempoHur" class="labelvelocidade"><input class="radioVelocidade" type = "radio" class = "radio" name = "magiaVelocidade" id = "utamoTempoHur" value = "3" onchange="calcularVelocidade(); trocaCor();" />Utamo&nbsp;Tempo&nbsp;Hur</label>
+
+        <label id="labelUtaniTempoHur" class="labelvelocidade"><input class="radioVelocidade" type = "radio" class = "radio" name = "magiaVelocidade" id = "utaniTempoHur" value = "3" onchange="calcularVelocidade(); trocaCor();"/>Utani&nbsp;Tempo&nbsp;Hur</label></p>
+
+<hr>
+        <label id="labelSetVelocidade" class="labelvelocidade">Set&nbsp;de&nbsp;velocidade <input class="checkboxVelocidade" type="checkbox" id="velocidadeSet" onchange="calcularVelocidade(); trocaCor();"></label>
+<hr>
+        <p>Aperte nos ícones abaixo para visualizar o melhor set de cada classe.</p>
+        <hr>
+
+        <table  style="width: 50%;" align="center">
+            <td class="tdSet" > <img class="imgSet" src="img/Zaoan_Sword.gif" onclick="Mudarestado('divSetKnight')" height="50" width="50"> </td>
+            <td class="tdSet"> <img class="imgSet" src="https://www.tibiawiki.com.br/images/c/ce/The_Epic_Wisdom.gif" onclick="Mudarestado('divSetMage')" height="50" width="50"> </td>
+            <td class="tdSet"> <img class="imgSet" src="https://www.tibiawiki.com.br/images/5/51/Crossbow.gif" onclick="Mudarestado('divSetPaladin')" height="50" width="50"> </td>
+        </table>
+
+<!--////////////////////////////////////////////////////////////////////-->
+<table  align="center" bgcolor="grey">
+            <td>
+                <div id="divSetKnight" style="display:none">
+
+<table  border="1px" border="1px"  style="width: 33%;" align="center">
+
+<tr>Best Knight Set </tr>
+<p>&thinsp;&thinsp;&thinsp; +145 Speed</p>
+           <tr>
+               <td>
+                    <a href="https://www.tibiawiki.com.br/wiki/Shrunken_Head_Necklace" target="_blank"><img src="https://www.tibiawiki.com.br/images/5/50/Shrunken_Head_Necklace.gif" alt="Shrunken Head Necklace"></a>
+               </td>
+               <td>
+                    <a href="https://www.tibiawiki.com.br/wiki/Werewolf_Helmet" target="_blank"><img src="https://www.tibiawiki.com.br/images/6/63/Werewolf_Helmet.gif" alt="Werewolf Helmet"></a>
+               </td>
+               <td>
+                    <img src="https://www.tibiawiki.com.br/images/d/dc/NoBag.gif" alt="">
+               </td>
+           </tr>
+           <tr>
+               <td>
+                    <img src="https://www.tibiawiki.com.br/images/e/e6/NoWeaponRight.gif" alt="No Weapon">
+               </td>
+               <td>
+                    <a href="https://www.tibiawiki.com.br/wiki/Prismatic_Armor" target="_blank"><img src="https://www.tibiawiki.com.br/images/4/42/Prismatic_Armor.gif" alt="Prismatic Armor"></a>
+               </td>
+               <td>
+                    <a href="https://www.tibiawiki.com.br/wiki/Sparking_Rainbow_Shield" target="_blank"><img src="https://www.tibiawiki.com.br/images/7/73/Sparking_Rainbow_Shield.gif" alt="Sparking Rainbow Shield"></a>
+               </td>
+           </tr>
+           <tr>
+               <td>
+                    <a href="https://www.tibiawiki.com.br/wiki/Time_Ring" target="_blank"><img src="https://www.tibiawiki.com.br/images/0/0d/Time_Ring.gif" alt="Time Ring"></a>
+               </td>
+               <td>
+                    <a href="https://www.tibiawiki.com.br/wiki/Grasshopper_Legs" target="_blank"><img src="https://www.tibiawiki.com.br/images/e/e1/Grasshopper_Legs.gif" alt="Grasshoper Legs"></a>
+               </td>
+               <td>
+                   <a href="https://www.tibiawiki.com.br/wiki/Magical_Torch" target="_blank"><img src="https://www.tibiawiki.com.br/images/a/a6/Magical_Torch.gif" alt="Magic Torch"></a>
+               </td>
+           </tr>
+           <tr>
+               <td>
+                    <a href="" target="_blank"><img src="" alt=""></a>
+               </td>
+               <td>
+                    <a href="https://www.tibiawiki.com.br/wiki/Void_Boots" target="_blank"><img src="https://www.tibiawiki.com.br/images/archive/f/f7/20160617172300%21Void_Boots.gif" alt="Void Boots"></a>
+               </td>
+               <td>
+                    <a href="" target="_blank"><img src="" alt=""></a>
+               </td>
+             </tr>
+   </table>
+                </div>
+             </td>
+             <td>
+                <div id="divSetMage" style="display:none">
+<table border="1px" border="1px" style="width: 33%;" align="center">
+       <tr>Best Mage Set</tr>
+<p>&thinsp;&thinsp;&thinsp; +135 Speed</p>
+           <tr>
+               <td>
+                    <a href="https://www.tibiawiki.com.br/wiki/Shrunken_Head_Necklace" target="_blank"><img src="https://www.tibiawiki.com.br/images/5/50/Shrunken_Head_Necklace.gif" alt="Shrunken Head Necklace"></a>
+               </td>
+               <td>
+                    <a href="https://www.tibiawiki.com.br/wiki/Tiara_of_Power" target="_blank"><img src="https://www.tibiawiki.com.br/images/archive/e/e8/20160617172426%21Tiara_of_Power.gif" alt="Tiara of Power"></a>
+               </td>
+               <td>
+                    <img src="https://www.tibiawiki.com.br/images/d/dc/NoBag.gif" alt="">
+               </td>
+           </tr>
+           <tr>
+               <td>
+                    <img src="https://www.tibiawiki.com.br/images/e/e6/NoWeaponRight.gif" alt="No Weapon">
+               </td>
+               <td>
+                    <a href="https://www.tibiawiki.com.br/wiki/Swan_Feather_Cloak" target="_blank"><img src="https://www.tibiawiki.com.br/images/2/2b/Swan_Feather_Cloak.gif" alt="Swan Feather Cloak"></a>
+               </td>
+               <td>
+                    <img src="https://www.tibiawiki.com.br/images/4/44/NoWeaponLeft.gif" alt="No Shield">
+               </td>
+           </tr>
+           <tr>
+               <td>
+                    <a href="https://www.tibiawiki.com.br/wiki/Time_Ring" target="_blank"><img src="https://www.tibiawiki.com.br/images/0/0d/Time_Ring.gif" alt="Time Ring"></a>
+               </td>
+               <td>
+                    <a href="https://www.tibiawiki.com.br/wiki/Grasshopper_Legs" target="_blank"><img src="https://www.tibiawiki.com.br/images/e/e1/Grasshopper_Legs.gif" alt="Grasshoper Legs"></a>
+               </td>
+               <td>
+                   <a href="https://www.tibiawiki.com.br/wiki/Magical_Torch" target="_blank"><img src="https://www.tibiawiki.com.br/images/a/a6/Magical_Torch.gif" alt="Magic Torch"></a>
+               </td>
+           </tr>
+           <tr>
+               <td>
+                    <a href="" target="_blank"><img src="" alt=""></a>
+               </td>
+               <td>
+                    <a href="https://www.tibiawiki.com.br/wiki/Void_Boots" target="_blank"><img src="https://www.tibiawiki.com.br/images/archive/f/f7/20160617172300%21Void_Boots.gif" alt="Void Boots"></a>
+               </td>
+               <td>
+                    <a href="" target="_blank"><img src="" alt=""></a>
+               </td>
+           </tr>
+   </table>
+                </div>
+             </td>
+            <td>
+                <div id="divSetPaladin" style="display:none">
+<table border="1px" border="1px" style="width: 33%;" align="center">
+       <tr>Best Paladin Set</tr>
+<p>&thinsp;&thinsp;&thinsp; +135 Speed</p>
+           <tr>
+               <td>
+                    <a href="https://www.tibiawiki.com.br/wiki/Shrunken_Head_Necklace" target="_blank"><img src="https://www.tibiawiki.com.br/images/5/50/Shrunken_Head_Necklace.gif" alt="Shrunken Head Necklace"></a>
+               </td>
+               <td>
+                    <a href="https://www.tibiawiki.com.br/wiki/Werewolf_Helmet" target="_blank"><img src="https://www.tibiawiki.com.br/images/6/63/Werewolf_Helmet.gif" alt="Werewolf Helmet"></a>
+               </td>
+               <td>
+                    <img src="https://www.tibiawiki.com.br/images/d/dc/NoBag.gif" alt="">
+               </td>
+           </tr>
+           <tr>
+               <td>
+                    <img src="https://www.tibiawiki.com.br/images/e/e6/NoWeaponRight.gif" alt="No Weapon">
+               </td>
+               <td>
+                    <a href="https://www.tibiawiki.com.br/wiki/Prismatic_Armor" target="_blank"><img src="https://www.tibiawiki.com.br/images/4/42/Prismatic_Armor.gif" alt="Prismatic Armor"></a>
+               </td>
+               <td>
+                    <img src="https://www.tibiawiki.com.br/images/4/44/NoWeaponLeft.gif" alt="No Shield">
+               </td>
+           </tr>
+           <tr>
+               <td>
+                    <a href="https://www.tibiawiki.com.br/wiki/Time_Ring" target="_blank"><img src="https://www.tibiawiki.com.br/images/0/0d/Time_Ring.gif" alt="Time Ring"></a>
+               </td>
+               <td>
+                    <a href="https://www.tibiawiki.com.br/wiki/Grasshopper_Legs" target="_blank"><img src="https://www.tibiawiki.com.br/images/e/e1/Grasshopper_Legs.gif" alt="Grasshoper Legs"></a>
+               </td>
+               <td>
+                   <a href="https://www.tibiawiki.com.br/wiki/Magical_Torch" target="_blank"><img src="https://www.tibiawiki.com.br/images/a/a6/Magical_Torch.gif" alt="Magic Torch"></a>
+               </td>
+           </tr>
+           <tr>
+               <td>
+                    <a href="" target="_blank"><img src="" alt=""></a>
+               </td>
+               <td>
+                    <a href="https://www.tibiawiki.com.br/wiki/Void_Boots" target="_blank"><img src="https://www.tibiawiki.com.br/images/archive/f/f7/20160617172300%21Void_Boots.gif" alt="Void Boots"></a>
+               </td>
+               <td>
+                    <a href="" target="_blank"><img src="" alt=""></a>
+               </td>
+           </tr>
+   </table>
+                </div>
+             </td>
+         </table>
+<!--///////////////////////////////////////////////////////////////////-->
+
+
+<hr>
+  <br></div>
+
+        <div id="divSkill" style="display:none">
+
+           <hr>
+
+          <div class="intern-section" id="escolha da skill">
+              <table style="width: 80%" align="center" >
+                <p class="pAlteradoDois">Selecione a skill desejada.</p>
+                <hr>
+              <tr>
+                     <td class="tdSet">
+                         <img class="imgSet" src="img/Umbral_Master_Spellbook.gif" onclick="Mudarestado('divMagicLevelSkill'); recolherTodos('divMeleeSkill'); recolherTodos('divDistanceSkill'); recolherTodos('divkill'); recolherTodos('divFishingSkill');" height="35" width="35">
+                     </td>
+
+                     <td class="tdSet">
+                        <img class="imgSet" src="img/Umbral_Master_Chopper.gif" onclick="recolherTodos('divMagicLevelSkill'); Mudarestado('divMeleeSkill'); recolherTodos('divDistanceSkill'); recolherTodos('divShieldingSkill'); recolherTodos('divFishingSkill');" height="35" width="35">
+                     </td>
+
+                     <td class="tdSet">
+                        <img class="imgSet" src="img/Umbral_Master_Crossbow.gif" onclick="recolherTodos('divMagicLevelSkill'); recolherTodos('divMeleeSkill'); Mudarestado('divDistanceSkill'); recolherTodos('divShieldingSkill'); recolherTodos('divFishingSkill');" height="35" width="35">
+                     </td>
+
+                     <td class="tdSet">
+                        <img class="imgSet" src="img/Blessed_Shield.gif" onclick="recolherTodos('divMagicLevelSkill'); recolherTodos('divMeleeSkill'); recolherTodos('divDistanceSkill'); Mudarestado('divShieldingSkill'); recolherTodos('divFishingSkill');" height="35" width="35">
+                     </td>
+
+                     <td class="tdSet">
+                        <img class="imgSet" src="img/Fishing_Rod.gif" onclick="recolherTodos('divMagicLevelSkill'); recolherTodos('divMeleeSkill'); recolherTodos('divDistanceSkill'); recolherTodos('divShieldingSkill'); Mudarestado('divFishingSkill');" height="35" width="35">
+                     </td>
+
+                  </tr>
+              </table>
+</div>
+
+
+
+    <div id="divMagicLevelSkill" style="display:none">
+<hr>
+
+                 <p> Magic level atual: <input class = "text" id="magicLevelAtual" type="number" placeholder="00"></p>
+                 <p>Magic level desejado: <input class = "text" id="magicLevelDesejado" type="number" placeholder="00">
+                 <label class="myButton" onclick="calcularMagicLevel()">Calcular</label></p>
+                 <hr>
+
+                 <p>Mana necessária: <label id="manaNecessaria"/>0</p><br>
+                 <p>Total de mana usada para o level desejado: <label id="manaTotal"/>0</p>
+                 <p>Custo em GPs: <label id="custoMana"/>0</p>
+                 <hr>
+                 <p>Mana necessária para cada por cento: <label id="poCentoMana"/>0</p>
+                 <p>Custo em GPs para cada por cento: <label id="custoManaPorCento"/>0</p>
+
+
+<hr>
+                 </div>
+
+                 <div id="divMeleeSkill" style="display:none">
+<hr>
+                    <p> Melee Skill atual: <input class = "text" id="meleeSkillAtual" type="number" placeholder="00"></p>
+                    <p> Melee Skill desejado: <input class = "text" id="meleeSkillDesejado" type="number" placeholder="00">
+
+                      <font style="margin: 0px 0px 0px 3px;">
+                    <label class="myButton" onclick="calcularMeleeSkill()" >Calcular</label></font></p>
+
+                    <p>Total de ataques necessários: <label id="numeroHitNecessarioMelee"/>0</p>
+                    <p>Tempo necessário: <label id="tempoMeleeSkill"/>0</p>
+<hr>
+                 </div>
+
+                 <div id="divDistanceSkill" style="display:none">
+<hr>
+                    <p> Distance Skill atual: <input class = "text" id="distanceSkillAtual" type="number" placeholder="00"></p>
+                    <p> Distance Skill desejado: <input class = "text" id="distanceSkillDesejado" type="number" placeholder="00"> <label class="myButton" onclick="calcularDistanceSkill()">Calcular</label></p>
+
+                    <p>Total de ataques necessários: <label id="numetoDeHitDistance"/>0</p>
+                    <p>Tempo necessário: <label id="tempoDistanceSkill"/>0</p>
+
+                    <hr>
+                    <br>
+                    <p style="color: darkblue; font-style: italic; text-decoration: underline; " onclick="Mudarestado('informacaoDistance')">+*Aperte para informações*+</p>
+
+                    <div id="informacaoDistance" style="display: none;">
+                      <font style="text-decoration: underline; font-style: italic; font-color:57A684;">
+                        A fórmula oficial não é conhecida. A fórmula aqui utilizada foi criada baseada no "padrão" que outras fórmulas do jogo funciona portanto não está 100% correta, porem sua taxa de erro vai de apenas -0,17%- em leveis mais altos e -3,45%- e por ser uma diferença muito pequena não faz tanta diferença.
+                      </font>
+
+
+                    </div>
+
+
+
+
+
+
+<hr>
+                 </div>
+
+                 <div id="divShieldingSkill" style="display:none">
+<hr>
+                    <p> Shielding Skill atual: <input class = "text" id="shieldSkillAtual" type="number" placeholder="00"></p>
+                    <p> Shielding Skill desejado: <input class = "text" id="shieldSkillDesejado" type="number" placeholder="00"> <label class="myButton" onclick="calcularShieldingSkill()">Calcular</label></p>
+
+                    <p>Total de ataques recebidos necessários: <label id="numeroHitSofridosNecessarioSkill"/>0</p>
+                    <p >Tempo necessário: <label id="tempoShieldSkill"/>0</p>
+
+
+<hr>
+                 </div>
+
+                 <div id="divFishingSkill" style="display:none">
+<hr>
+                    <p > Fishing Skill atual: <input class = "text" id="fishingSkillAtual" type="number" placeholder="00"></p>
+                    <p> Fishing Skill desejado: <input class = "text" id="fishingSkillDesejado" type="number" placeholder="00"> <label class="myButton" onclick="calcularFishingSkill()">Calcular</label></p>
+
+                    <p>Total de tentativas necessários: <label id="numeroDeTentativasNecessarias"/>0</p>
+<hr>
+                 </div>
+
+
+
+
+
+
+
+
+           <hr>
+        </div>
+
+        <div class="intern-section" id="divExperiencia" style="display:none">
+             <p class="pAlteradoDois" >Cálculos de experiência : </p><hr>
+             <p> Level atual: <input class = "text" id="levelAtual" type="number" placeholder="00">
+             <p> Level desejado: <input class = "text" id="levelDesejado" type="number" placeholder="00">
+             <label class="myButton" onclick="CalcularLevelDesejado()">Calcular</label>
+             <p>Experiência necess&aacute;ria: <font color="darkgreen"><label id="xpNecessaria" /></font></p>
+        <br></div>
+
+        <div class="intern-section" id="divStamina" style="display:none">
+          <p class="pAlteradoDois" >Cálculos de stamina:</p>
+            <hr>
+
+            <p> Digite sua stamina atual: HH <input class="textBoxHours" id="staminaHours"  type="number" placeholder="00"> MM <input class="textBoxHours" id="staminaMinutes" type="number" placeholder="00">
+            <label class="myButton" onclick="calcularStamina()">Calcular</label></p>
+
+
+            <p>Quantidade de horas que o personagem precisa descansar para ter:</p>
+            <br>
+            <p>40 horas: <label id="staminaNormal" />0</label></p>
+            <br>
+            <p>De 40 até 42 horas: <label id="staminaBonus" />0</label></p>
+            <br>
+            <p>Stamina completa: <label id="staminaFull" />0</p>
+            <hr>
+            <br><p>Stamina começa a regenerar após 10 minutos Off-line</p>
+
+
+
+</div>
+</section>
+
+<div class="divBottom-suggestion">
+<a  href="https://secure.tibia.com/community/?subtopic=character&name=Haojrs" rel="author" target="_blank">Feito por: Haojrs -- Gladera</a>
+
+<a  href="mailto:edmilson.dsouza@hotmail.com">Dicas e sugestões: edmilson.dsouza@hotmail.com. </a>
+</div>
+
+</body>
+</html>

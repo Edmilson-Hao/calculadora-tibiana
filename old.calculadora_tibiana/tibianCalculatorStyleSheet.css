@@ -1,0 +1,614 @@
+
+body{
+  font-family: Tahoma,Verdana,Segoe,sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #B8E7D3;
+}
+
+#container{
+    width: 100%;
+    height: 4.3em;
+    background: #56ae88;
+    border-bottom: 5px solid #348C66;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+}
+
+  .logo{
+    position: relative;
+    left: 15px;
+    font-size: 1.7em;
+    margin-bottom: 10px;
+    top: -0.3em;
+
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */
+  }
+
+  .logo span{
+    font-size: .7em;
+    font-weight: 300;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */
+  }
+
+
+.radioMenus{
+  width:0;
+  height:0;
+}
+.labelMenus{
+  line-height: 2em;
+  background: #B5E2CF;
+  border: 1px solid #095B38;
+  border-collapse: inherit;
+  cursor: pointer;
+  border-radius: 15px;
+  padding-right: 10px;
+  padding-left: 0px;
+  margin: 0px;
+  white-space: nowrap;
+  display: inline;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */
+}
+
+
+  .radioVelocidade{
+    width:0;
+    height:0;
+  }
+  .checkboxVelocidade{
+    width:0;
+    height:0;
+  }
+  .labelvelocidade{
+    line-height: 2em;
+    background: #B5E2CF;
+    border: 1px solid #095B38;
+    border-collapse: inherit;
+    cursor: pointer;
+    border-radius: 15px;
+    padding-right: 10px;
+    padding-left: 0px;
+    margin: 0px;
+    white-space: nowrap;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */
+  }
+
+  .radioVocacao{
+    width:0;
+    height:0;
+  }
+    .labelVocacaoSemVocacao{
+    display: inline;
+    background: #B5E2CF;
+      border: 1px solid #095B38;
+      border-collapse: inherit;
+    cursor: pointer;
+    border-radius: 15px;
+    padding-right: 10px;
+    padding-left: 0px;
+    padding-top: 0px;
+    margin-top: 0px;
+      white-space: nowrap;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */
+  }
+  .labelVocacao{
+  line-height: 2em;
+    background: #B5E2CF;
+    border: 1px solid #095B38;
+    border-collapse: inherit;
+  cursor: pointer;
+  border-radius: 15px;
+  padding-right: 10px;
+  padding-left: 0px;
+    white-space: nowrap;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */
+
+  }
+
+    .languageButton{
+      background-color:#6fba26;
+      padding:10px 5px 0px 5px;
+      height: 35px;
+      position:block;
+      font-family: 'Open Sans', sans-serif;
+      text-decoration:none;
+      background-color: #85c7ab;
+      border-radius: 0px 0px 10px 10px;
+      box-shadow: inset 0px 1px 0px #ffffff, 0px 6px 0px #319378;
+      cursor: pointer;
+
+    }
+    .languageButton:hover{
+      background: lightgreen;
+      color: grey;
+    }
+    .languageButton:active {
+    top:7px;
+    background-image: linear-gradient(bottom, rgb(100,170,30) 100%, rgb(129,212,51) 0%);
+    box-shadow: inset 0px 1px 0px #b2f17f, inset 0px -1px 0px #3d6f0d;
+    color: #156785;
+    text-shadow: 0px 1px 1px rgba(255,255,255,0.3);
+    background: black;
+}
+
+
+    input.button{
+      text-decoration: none;
+      border-radius: 3px 3px 3px 3px;
+      box-shadow: inset 0px 1px 0px #ffffff, 0px 2px 0px #319378;
+    }
+    input.button:active{
+        margin-top: 5px;
+        background-image: linear-gradient(bottom, rgb(100,170,30) 100%, rgb(129,212,51) 0%);
+        box-shadow: inset 0px 1px 0px #b2f17f, inset 0px -1px 0px #3d6f0d;
+        color: #156785;
+        text-shadow: 0px 1px 1px rgba(255,255,255,0.3);
+        background: black;
+    }
+
+
+.imgSet{
+  padding: 8px 8px 5px 8px;
+  background: #58A886;
+  border: 5px solid #58A886;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.tdSet{
+  background: #86C7AB;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.tdSet:active,
+.imgSet:active{
+  -webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+}
+.tdSet:active{
+  border-bottom: 3px solid black;
+  border: 2px solid black;
+}
+.tableSetItemView td{
+  border: 1px solid black;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+}
+
+
+.pAlterado{
+  font-size: 3em;
+}
+
+.pAlteradoDois{
+  font-size:20px;
+}
+.fieldSet{
+  border-color: black;
+  border-style: solid;
+}
+        table{
+         WIDTH:100%;
+          align: center;
+        }
+        p {
+            font-size: 1em;
+            font-family: tahoma;
+            margin: 2px;
+             }
+        .button {
+            font-size: 1em;
+            margin: 2px;
+        }
+        .text {
+            border: 1px solid black;
+            font-size: 1em;
+            margin: 2px;
+        }
+        .textBoxHours {
+            width: 3em;
+            font-size: 1em;
+            margin: 2px;
+        }
+
+
+
+/*Find Person*/
+
+
+.myButton,
+.myButton-get-info{
+  background: rgba(0,0,0,.2);
+  font-size: .9em;
+  text-align: center;
+  border-radius: 2px;
+  border: 1px solid black;
+  cursor: pointer;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */
+
+}
+.myButton{
+  display: inline-block;
+  margin: 5px;
+  padding: 5px;
+}
+
+.myButton:active,
+.myButton-get-info:active {
+  border-top: 1px solid rgba(133,199,171,.0);
+  border-bottom: 1px solid rgba(0,0,0,0);
+  border-left: 1px solid rgba(0,0,0,.5);
+  border-right: 1px solid rgba(0,0,0,.5);
+  -webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+}
+
+.labelAtributoPesquisaPersonagem{
+  font-size: .8em;
+  display: inline-block;
+  width: 25%;
+  margin: 0 auto;
+  padding: .1em;
+  border-bottom: 1px solid rgba(0,0,0,.5);
+  border-right: 1px solid rgba(0,0,0,.5);
+  text-align: right;border-radius: 0 0 0 10px;
+}
+.labelAtributoResultadoPesquisa{
+  font-size: .8em;
+  display: inline-block;
+  width: 71%;
+  margin: 0 auto;
+  padding: .1em;
+  border-bottom: 1px solid rgba(0,0,0,.5);
+  border-left: 1px solid rgba(0,0,0,.5);
+  border-radius: 0 0 10px 0;
+}
+
+#divDadosPersonagemPesquisa{
+  width: 99%;
+  position: relative;
+  border-left: .1em solid black;
+  border-right: .1em solid black;
+  border-bottom: .1em solid black;
+  background: #85c7ab;
+  border-radius: 0 0 10px 10px;
+  padding-left: 5px;
+  transform: translateX(-1px);
+}
+.myButton-get-info{
+  margin-left: 10vw;
+  width: 50%;
+  padding-right: 3em;
+  padding-left: 3em;
+}
+
+.dMenu{
+  background: blue;
+}
+
+
+/*TOP XP*/
+
+#divSelections{
+  align-items: center;
+  border-top: 1px solid darkgreen;
+  border-bottom: 1px solid darkgreen;
+  align-content: center;
+}
+
+select{
+  font-size: .9em;
+  border-radius: 5px;
+  margin-top: 15px;
+  margin-left: 5px;
+  margin-bottom: 15px;
+}
+
+#findPersonTable{
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  background-color: #85c7ab;
+  margin: 0 auto;
+}
+
+#findPersonTable td{
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  text-align: center;
+  background-color: #85c7ab;
+  width: 430px;
+}
+
+  .firstLoadingIcon{
+    margin: 10px auto;
+    padding: 0;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    border-bottom: 4px solid #095B38;
+    border-right: 4px solid transparent;
+    animation: rotacaoIconeLoading 2s linear infinite;
+  }
+  .secondLoadingIcon{
+    margin: 0 auto;
+    padding: 0;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    border-bottom: 4px solid #095B38;
+    border-right: 4px solid transparent;
+    animation: rotacaoIconeLoading 2s linear infinite;
+
+  }
+  .thirdLoadingIcon{
+    margin: 0 auto;
+    padding: 0;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    border-bottom: 4px solid #095B38;
+    border-right: 4px solid transparent;
+    animation: rotacaoIconeLoading 2s linear infinite;
+
+  }
+
+  @keyframes rotacaoIconeLoading{
+    from{}
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .topXpTable{
+    border: 1px solid black;
+    background-color: #85c7ab;
+    margin: 0 auto;
+  }
+
+  .topXpTable td{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    text-align: center;
+    background-color: #85c7ab;
+    width: 430px;
+  }
+  .intern-section{
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+
+.calculadora-principal{
+    position: relative;
+    background: #B5E2CF;
+    margin:0;
+    padding: 5px 2px;
+  }
+
+  .divBottom-suggestion{
+    padding-left: 5px;
+  }
+
+    .site-nav{
+    z-index: 10;
+    width: 100%;
+    position: absolute;
+    top: -310%;
+    right: 0;
+    background: #58A886;
+    transition: all .3s linear;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */
+
+  }
+  .site-nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .site-nav li{
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+  }
+
+  .site-nav a{
+    color: black;
+    text-decoration: none;
+    display: block;
+    padding: .5em 20% .5em 0;
+    text-transform: uppercase;
+    text-align: right;
+  }
+  .site-nav a:hover,
+  .site-nav a:focus{
+    background: #FFC2AA;
+    color: #58A886
+  }
+
+
+  
+
+
+/* //////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////// */
+
+
+#labelCheck{
+  width: 41px;
+  height: 41px;
+  border: 4px solid #126a44;
+  position: absolute;
+  transition: all .3s linear;
+  cursor: pointer;
+  top: 1em;
+  right: 1em;
+  z-index: 15;
+
+}
+#check{
+  display: none;
+}
+.hamburger{
+  margin-top: .2em;
+  right: 1.5em;
+  width: 34px;
+  height: 5px;
+  top: 51%;
+  margin-left: 3px;
+  position: absolute;
+  background: #126a44;
+  transition: all .3s linear;
+  border-radius: 5px;
+  z-index: 14;
+}
+.hamburger:before,
+.hamburger:after{
+  top: 1em;
+  right: 0;
+  content: '';
+  position: absolute;
+  width: 34px;
+  height: 5px;
+  border-radius: 5px;
+  background: #126a44;
+  transition: all .3s linear;
+}
+.hamburger:before{
+  top: -10px;
+}
+.hamburger:after{
+  top: 10px;
+}
+#check:checked ~ span{
+  background: transparent;
+}
+#check:checked ~ span:after{
+  transform: translate(0px, -10px) rotate(-45deg);
+}
+
+#check:checked ~ span:before{
+  transform: translate(0px, 10px) rotate(45deg);
+}
+#check:checked ~ label{
+  border-radius: 50%;
+}
+
+#check:checked ~ .site-nav{
+  visibility: visible;
+  top: 104%;
+}
+
+
+/* //////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////// */
+
+@media (min-width: 745px){
+
+
+  .calculadora-principal{
+    width: 60%;
+    position: relative;
+    background: #B5E2CF;
+    margin:0;
+    padding: 5px 2px;
+    margin: auto;
+  }
+
+
+  .divBottom-suggestion{
+    width: 60%;
+    padding-left: 5px;
+    margin: auto;
+  }
+
+.site-nav{
+  position: absolute;
+  top: 2.1em;
+  right: 1em;
+  text-align: right;
+}
+.site-nav li{
+  display: inline-block;
+  border: none;
+}
+.site-nav a{
+  padding: 0;
+  font-size: .7em;
+  margin-left: 1em;
+  color: black;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+.logo{
+    position: relative;
+    left: 15px;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    top: -0.3em;
+    -webkit-user-select: none;  
+    -moz-user-select: none;     
+    -ms-user-select: none;      
+    user-select: none;          
+  }
+
+  .logo span{
+    font-size: .7em;
+    font-weight: 300;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */
+  }
+
+#check{
+  display: none;
+}
+
+#labelCheck{
+  display: none;
+}
+
+.hamburger{
+  display: none;
+}
+
+}

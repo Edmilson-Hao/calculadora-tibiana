@@ -1,0 +1,22 @@
+
+{
+   "short_name": "Calc Tibiana",
+   "name": "Calculadora Tibiana",
+   "icons": [
+      {
+      "src": "img/icon.png",
+         "type": "image/png",
+         "sizes": "192x192"
+      },
+      {
+         "src": "img/icon-512.png",
+         "type": "image/png",
+         "sizes": "512x512"
+      }
+   ],
+   "start_url": "index2.html",
+   "background_color": "#B8E7D3",
+   "display": "standalone",
+   "scope": "/maps/",
+   "theme_color": "#B8E7D3"
+}

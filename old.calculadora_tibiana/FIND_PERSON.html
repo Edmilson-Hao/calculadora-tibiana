@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head> <title>Find Person</title>
+    <meta name="author" content="Edmilson Gonçalves - Haojrs">
+    <meta charset="utf-8">
+    <meta name="description" content="A WebApp used to calculate info about the game Tibia, Tibian Calculator." />
+    <meta name="keywords" content="habilidade, habilidades tibia, espada, clava, maça, machado, distância, físico, dano, corpo a corpo, skill, distance, physical, damage, calculator, melee, axe, sword, club, tibia, stats, statistics, tibia-stats, CipSoft, Tibian Calculator, Tibian calculator, Calculadora, dados tibia, calculos tibia" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,  user-scalable=0" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-title" content="Calc. Tibiana PWA">
+    <link rel="touch-icon" href="https://pbs.twimg.com/profile_images/1233627159/TibiaIcon_400x400.png" type=image/x-icon>
+    <link rel="shortcut icon" href="https://pbs.twimg.com/profile_images/1233627159/TibiaIcon_400x400.png" type="image/x-icon" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="tibianCalculatorStyleSheet.css">
+<script src="tibianCalculatorJavaScript_EN.js"></script>
+
+</head>
+<body onload="larguraVerificada()">
+<header>
+    <div id="container">
+        <h1 class="logo">Find<span>Person</span></h1>
+
+            <input type="checkbox" id="check">
+            <label id="labelCheck" for="check"></label>
+            <span class="hamburger"></span>
+
+        <nav class="site-nav" id="theMenuHanburger">
+        <ul>
+
+            <li><a href="index_EN.html"><i   class="fas fa-calculator"></i> Calculator</a></li>
+
+            <li><a href="FIND_PERSON.html"><i   class="fas fa-search"></i> Find Person</a></li>
+
+            <li><a href="TOP_SKILL_EN.html"><img src="https://image.flaticon.com/icons/svg/87/87087.svg" style="width: 1.1em; height: 1.1em;"> Top Skills</a></li>
+
+            <li><a href="TOP_XP_EN.html"><i   class="fas fa-arrow-circle-up"></i> Top XP</a></li>
+
+            <li><p href=""><i class="fas fa-newspaper"></i> Latest News - soon</p></li>
+            <li><a href="ENCONTRA-PLAYER.html"><img src="https://image.flaticon.com/icons/svg/48/48632.svg" style="width: 1.1em; height: 1.1em;"> Português</a></li>
+        </ul>
+
+        </nav>
+
+    </div>
+</header>
+<br><br><br><br>
+<section class="calculadora-principal input">
+    <div class="intern-section">
+
+<label>Search Player: </label>
+<input type="text" id="characterName" placeholder="name" autocomplete="on" style="width: 10em;">
+<label class="myButton" onclick="getInformation()">Search</label>
+</div>
+</section>
+
+<div id="loadingIcon" class="firstLoadingIcon" style="display: none;">
+    <div class="secondLoadingIcon">
+        <div class="thirdLoadingIcon"></div>
+    </div>
+</div>
+
+<!-- ////////////////////////////////////////////////////////////////////// -->
+<section class="calculadora-principal output">
+    <div class="intern-section">
+
+<table id="findPersonTable" style="display: none;"></table>
+
+</div>
+</section>
+<!-- ////////////////////////////////////////////////////////////////////// -->
+
+<div class="divBottom-suggestion">
+<a  href="https://secure.tibia.com/community/?subtopic=character&name=Haojrs" rel="author" target="_blank">Created by: Haojrs -- Gladera</a>
+<br>
+<a  href="mailto:edmilson.dsouza@hotmail.com">Suggestions: edmilson.dsouza@hotmail.com. </a>
+</div>
+
+</body>
+</html>

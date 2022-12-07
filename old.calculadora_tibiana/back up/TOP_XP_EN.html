@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head> <title>Top Xp</title>
+    <meta name="author" content="Edmilson Gonçalves - Haojrs">
+    <meta charset="utf-8">
+    <meta name="description" content="A WebApp used to calculate info about the game Tibia, Tibian Calculator." />
+    <meta name="keywords" content="habilidade, habilidades tibia, espada, clava, maça, machado, distância, físico, dano, corpo a corpo, skill, distance, physical, damage, calculator, melee, axe, sword, club, tibia, stats, statistics, tibia-stats, CipSoft, Tibian Calculator, Tibian calculator, Calculadora, dados tibia, calculos tibia" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,  user-scalable=0" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-title" content="Calc. Tibiana PWA">
+    <link rel="touch-icon" href="https://pbs.twimg.com/profile_images/1233627159/TibiaIcon_400x400.png" type=image/x-icon>
+    <link rel="shortcut icon" href="https://pbs.twimg.com/profile_images/1233627159/TibiaIcon_400x400.png" type="image/x-icon" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="tibianCalculatorStyleSheet.css">
+<script src="tibianCalculatorJavaScript_EN.js"></script>
+
+</head>
+<body>
+<header>
+    <div id="container">
+        <h1 class="logo">Top<span>XP</span></h1>
+
+        <div class="hamburger" onclick="Mudarestado('theMenuHanburger'); Mudarestado('hamburgerX'); Mudarestado('hamburgerY');"></div>
+        <div id="hamburgerY" style="display: block;"></div>
+        <div id="hamburgerX" style="display: none;"></div>
+
+        <nav class="site-nav" id="theMenuHanburger" style="display: none;">
+        <ul>
+
+            <li><a href="index_EN.html"><i   class="fas fa-calculator"></i> Calculator</a></li>
+
+            <li><a href="FIND_PERSON"><i   class="fas fa-search"></i> Find Person</a></li>
+
+            <li><a href="TOP_SKILL_EN.html"><img src="https://image.flaticon.com/icons/svg/87/87087.svg" style="width: 1.1em; height: 1.1em;"> Top Skills</a></li>
+
+            <li><a href="TOP_XP_EN.html"><i   class="fas fa-arrow-circle-up"></i> Top XP</a></li>
+
+            <li><p href=""><i class="fas fa-newspaper"></i> Latest News - soon</p></li>
+            <li><a href="TOP_XP_PT.html"><img src="https://image.flaticon.com/icons/svg/48/48632.svg" style="width: 1.1em; height: 1.1em;"> Português</a></li>
+        </ul>
+
+        </nav>
+
+    </div>
+</header>
+<br><br><br><br>
+<section class="calculadora-principal input">
+    <div class="intern-section">
+
+
+<select id="selectWorld">
+        <option>Select World</option>
+
+
+    <optgroup label="A">
+        <option value="Antica">Antica</option>
+        <option value="Astera">Astera</option>
+    </optgroup>
+
+    <optgroup label="B">
+        <option value="Belobra">Belobra</option>
+        <option value="Bona">Bona</option>
+    </optgroup>
+
+    <optgroup label="C">
+        <option value="calmera">Calmera</option>
+        <option value="Celesta">Celesta</option>
+    </optgroup>
+
+    <optgroup label="D">
+        <option value="Damora">Damora</option>
+        <option value="Descubra">Descubra</option>
+        <option value="Duna">Duna</option>
+    </optgroup>
+
+    <optgroup label="E">
+        <option value="Epoca">Epoca</option>
+        <option value="Estela">Estela</option>
+    </optgroup>
+
+    <optgroup label="F">
+        <option value="Faluna">Faluna</option>
+        <option value="Ferobra">Ferobra</option>
+        <option value="Firmera">Firmera</option>
+    </optgroup>
+
+    <optgroup label="G">
+        <option value="Garnera">Garnera</option>
+        <option value="Gentebra">Gentebra</option>
+        <option value="Gladera">Gladera</option>
+    </optgroup>
+
+    <optgroup label="H">
+        <option value="Harmonia">Harmonia</option>
+        <option value="Helera">Helera</option>
+        <option value="Honbra">Honbra</option>
+    </optgroup>
+
+    <optgroup label="I">
+        <option value="Impera">Impera</option>
+        <option value="Inabra">Inabra</option>
+    </optgroup>
+
+    <optgroup label="J">
+        <option value="Jonera">Jonera</option>
+    </optgroup>
+
+    <optgroup label="K">
+        <option value="Kalibra">Kalibra</option>
+        <option value="Kenora">Kenora</option>
+    </optgroup>
+
+    <optgroup label="L">
+        <option value="Lobera">Lobera</option>
+        <option value="Luminera">Luminera</option>
+        <option value="Lutabra">Lutabra</option>
+    </optgroup>
+
+    <optgroup label="M">
+        <option value="Macabra">Macabra</option>
+        <option value="Menera">Menera</option>
+        <option value="Monza">Monza</option>
+    </optgroup>
+
+    <optgroup label="N">
+        <option value="Nefera">Nefera</option>
+        <option value="Noctera">Noctera</option>
+    </optgroup>
+
+    <optgroup label="O">
+        <option value="Olera">Olera</option>
+        <option value="Ombra">Ombra</option>
+    </optgroup>
+
+    <optgroup label="P">
+        <option value="Pacera">Pacera</option>
+        <option value="Peloria">Peloria</option>
+        <option value="Premia">Premia</option>
+    </optgroup>
+
+    <optgroup label="Q">
+        <option value="Quelibra">Quelibra</option>
+        <option value="Quintera">Quintera</option>
+    </optgroup>
+
+    <optgroup label="R">
+        <option value="Regugia">Regugia</option>
+        <option value="Relembra">Relembra</option>
+    </optgroup>
+
+    <optgroup label="S">
+        <option value="Secura">Secura</option>
+        <option value="Serdebra">Serdebra</option>
+        <option value="Solidera">Solidera</option>
+    </optgroup>
+
+    <optgroup label="T">
+        <option value="Talera">Talera</option>
+        <option value="Tortura">Tortura</option>
+    </optgroup>
+
+    <optgroup label="V">
+        <option value="Vita">Vita</option>
+        <option value="Vunira">Vunira</option>
+    </optgroup>
+
+    <optgroup label="W">
+        <option value="Wintera">Wintera</option>
+    </optgroup>
+
+    <optgroup label="Z">
+        <option value="Zuna">Zuna</option>
+        <option value="Zunera">Zunera</option>
+    </optgroup>
+</select>
+
+<select id="selectVocation" onchange="testeMudancaOpção()">
+        <option>Pick a vocation</option>
+        <option value="all">All</option>
+        <option value="knight">Elite knight</option>
+        <option value="druid">Elder Druid</option>
+        <option value="sorceter">Master Sorcerer</option>
+        <option value="paladin">Royal Paladin</option>
+
+</select>
+
+
+<div style="text-align: center;">
+<p class="myButton" onclick="procurarTenTopXp()">Top 10</p>
+<p class="myButton" onclick="procurarHundredTopXp()">Top 100</p>
+<p class="myButton" onclick="procurarThreeHundredTopXp()">Top 300</p>
+</div>
+
+</div>
+</section>
+
+<div id="loadingIcon" class="firstLoadingIcon" style="display: none;">
+    <div class="secondLoadingIcon">
+        <div class="thirdLoadingIcon"></div>
+    </div>
+</div>
+
+<!-- ////////////////////////////////////////////////////////////////////// -->
+<section class="calculadora-principal output">
+    <div class="intern-section">
+
+<h3 id="topTenHeader" style="display: none; text-align: center;">Top 10</h3>
+
+<table id="topTenXpTable" class="topXpTable" style="display: none;"></table>
+
+<h3 id="topHundredHeader" style="display: none; text-align: center;">Top 100</h3>
+
+<table id="topHundredXpTable" class="topXpTable" style="display: none;"></table>
+
+<h3 id="topThreeHundredHeader" style="display: none; text-align: center;">Top 300</h3>
+
+<table id="topThreeHundredXpTable" class="topXpTable" style="display: none;"></table>
+
+</div>
+</section>
+<!-- ////////////////////////////////////////////////////////////////////// -->
+
+
+
+
+<br><br>
+<div class="divBottom-suggestion">
+<p>Top 500 global will be added soon.</p>
+<label id="testeee"></label>
+<br>
+
+<a  href="https://secure.tibia.com/community/?subtopic=character&name=Haojrs" rel="author" target="_blank">Created by: Haojrs -- Gladera</a>
+<br>
+<a  href="mailto:edmilson.dsouza@hotmail.com">Suggestions: edmilson.dsouza@hotmail.com. </a>
+</div>
+
+
+</body>
+</html>
